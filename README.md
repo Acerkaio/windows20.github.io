@@ -1,2 +1,2 @@
 # windows20.github.io
-Windows 20 的恶搞网页
+Windows 20 宣传网页
