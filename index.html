@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>MOMO</title>
+    <style type="text/css">
+        /*-原UI-*/
+        html,
+        body {
+            height: 100%;
+        }
+
+        body,
+        ul,
+        li,
+        a,
+        p,
+        div {
+            /*慎删*/
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #wrap {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #main {
+            top: 0;
+            position: relative;
+        }
+
+        .page {
+            /*谨删*/
+            width: 100%;
+            margin: 0;
+        }
+
+        #pageUl {
+            position: fixed;
+            right: 10px;
+        }
+
+        /*---*/
+        @keyframes home-icon-start {
+            0% {
+                opacity: 0;
+                border-radius: 0px;
+                transform: translateY(50px);
+            }
+        }
+
+        @keyframes home-title-start {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes explorer-start {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes explorer-end {
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .home-icon {
+            animation: home-icon-start 1s;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            border-radius: 20px;
+            height: 180px;
+            width: 180px;
+            background-image: url(img/logo.png);
+            background-size: cover;
+            margin: auto;
+        }
+
+        .home-title-large {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 30px;
+            background: linear-gradient(to right, #2033C5, #4D84C7);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .home-title {
+            text-align: center;
+            margin-top: 3px;
+            font-size: 13px;
+            background: linear-gradient(to left, #2033C5, #4D84C7);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        #explorer {
+            width: 800px;
+            position: absolute;
+            top: 20%;
+            z-index: 9;
+            background-color: rgba(255, 255, 255, 0.742);
+            -webkit-backdrop-filter: blur(30px) !important;
+            backdrop-filter: blur(30px) !important;
+            border: 1px solid #d3d3d3;
+            text-align: left;
+            border-radius: 13px;
+        }
+
+        #explorerheader {
+            cursor: default !important;
+            border-radius: 13px 13px 0px 0px;
+            height: 24px;
+            padding-left: 6px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            background-color: #eff4f965;
+            color: rgb(46, 46, 46);
+        }
+
+        .explorerimg {
+
+            display: inline-block;
+        }
+
+        .explorerimg>img {
+            height: 15px;
+        }
+
+        .explorertitle {
+            display: inline-block;
+            font-size: 10px;
+        }
+
+        .ex-tool {
+            height: 50px;
+            background-color: #eff4f965;
+        }
+
+        .ex-header-bu>div {
+            transition: all .2s ease-in-out;
+            display: inline-block;
+            height: 24px;
+            width: 50px;
+            text-align: center;
+            margin-left: -5px !important;
+            margin-right: 0 !important;
+            border: 0;
+        }
+
+        #ex-bu1:active>img {
+            transition: 0s;
+            width: 10px;
+        }
+
+        #ex-bu2:active>img {
+            transition: 0s;
+            width: 10px;
+        }
+
+        #ex-bu3:active>img {
+            transition: 0s;
+            width: 10px;
+        }
+
+        #ex-bu3 {
+            border-radius: 0px 13px 0px 0px;
+        }
+
+        #ex-bu1:hover {
+            background-color: #d1d2d8ac;
+        }
+
+        #ex-bu2:hover {
+            background-color: #d1d2d8ac;
+        }
+
+        #ex-bu3:hover {
+            color: azure;
+            background-color: #f92b2bb0;
+        }
+
+        .ex-main {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        每个全屏页面div的class为page，其中的图片的class为pageImg
+        ul为右侧的导航栏
+        pageUlLi和page的数目必须相等，修改数目时还应修改最下面js鼠标悬停的跳转代码
+        -->
+    <div id="wrap">
+        <div id="main">
+            <ul id="pageUl" type="circle">
+                <li id="pageUlLi1" class="pageUlLi" style="color: red;">&nbsp;</li>
+                <li id="pageUlLi2" class="pageUlLi">&nbsp;</li>
+                <li id="pageUlLi3" class="pageUlLi">&nbsp;</li>
+                <li id="pageUlLi4" class="pageUlLi">&nbsp;</li>
+                <li id="pageUlLi5" class="pageUlLi">&nbsp;</li>
+            </ul>
+            <div style="background-color: rgba(244, 243, 243, 0.505);" id="page1" class="page">
+                <div style="padding-top: 20%;">
+                    <div class="home-icon"></div>
+                    <div id="HomeTitleLarge" class="home-title-large"></div>
+                    <div id="HomeTitle" class="home-title"></div>
+                </div>
+            </div>
+            <div style="background: url(img/img0_1920x1200.jpg); background-size: cover; background-repeat: no-repeat;"
+                id="page2" class="page">
+
+            </div>
+            <div style="background-color: rgba(244, 243, 243, 0.505);" id="page3" class="page">
+
+            </div>
+            <div style="background-color: rgba(244, 243, 243, 0.505);" id="page4" class="page">
+
+            </div>
+            <div style="background-color: rgba(244, 243, 243, 0.505);" id="page5" class="page">
+
+            </div>
+        </div>
+    </div>
+    <!-- 可拖动的 DIV -->
+    <div id="explorer">
+        <!-- 包含一个与可拖动 DIV 同名的标题 DIV，后跟 "header" -->
+        <div id="explorerheader" style="justify-content: space-between;">
+            <div class="explorername">
+                <div class="explorerimg">
+                    <img src="img/explorer.png" alt="Error">
+                </div>
+                <div class="explorertitle">
+                    File explorer
+                </div>
+            </div>
+            <div class="ex-header-bu">
+                <div id="ex-bu1"><img src="img/bu/1.png" alt="Error" width="12"></div>
+                <div id="ex-bu2" onclick="ExBu2()"><img src="img/bu/5.png" alt="Error" width="12"></div>
+                <div id="ex-bu3" onclick="ExBu3();"><img src="img/bu/3.png" alt="Error" width="12"></div>
+            </div>
+        </div>
+        <div class="ex-tool">
+            <div class="ex-new">
+
+            </div>
+        </div>
+        <div class="ex-main" >
+
+        </div>
+    </div>
+</body>
+<script>
+    var resizeTimer = null;
+
+    $(window).resize(function () {
+        if (resizeTimer) {
+            clearTimeout(resizeTimer);
+        }
+        resizeTimer = setTimeout(function () {
+            window.alert("检测到您的窗口大小发生变化，请刷新已保证页面显示正常");
+        }, 100)
+    })
+
+</script>
+<script src="js/movemouse.js"></script>
+<script>
+    document.getElementById("explorer").style.display = "none";
+    function HomeTitleLarge() {
+        document.getElementById("HomeTitleLarge").style.animation = "home-title-start 1s";
+        document.getElementById("HomeTitleLarge").innerHTML = ("WINDOWS 20");
+        document.getElementById("HomeTitleLarge").style.color = "home-title-start 1s";
+    }
+    setTimeout(HomeTitleLarge, 500);
+    function HomeTitle() {
+        document.getElementById("HomeTitle").style.animation = "home-title-start 1s";
+        document.getElementById("HomeTitle").innerHTML = ("跨时代的操作系统");
+        document.getElementById("HomeTitleLarge").style.color = "home-title-start 1s";
+    }
+    setTimeout(HomeTitle, 700);
+</script>
+<script>
+    window.οnresize = function () {
+        window.alert("检测到您的窗口大小发生变化，为保证质量，请刷新页面。")
+    }
+    //改变窗口大小时调整图片大小
+
+    window.onload = resizeImages;
+    window.onresize = resizeImages;
+    function resizeImages() {
+        $(function (e) {
+            var screenWeight = document.documentElement.clientWidth;
+            var screenHeight = document.documentElement.clientHeight;
+            $("[name=pageImg]").css("width", screenWeight).css("height", screenHeight);
+            $("#pageUl").css("bottom", screenHeight >> 1);
+        });
+    }
+    var index = 1;
+    var curIndex = 1;
+    var wrap = document.getElementById("wrap");
+    var main = document.getElementById("main");
+    var hei = document.body.clientHeight;
+    wrap.style.height = hei + "px";
+    var obj = document.getElementsByTagName("div");
+    for (var i = 0; i < obj.length; i++) {
+        if (obj[i].className == 'page') {
+            obj[i].style.height = hei + "px";
+        }
+    }
+    var pageNum = document.querySelectorAll(".page").length;
+    //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+    var startTime = 0, //翻屏起始时间  
+        endTime = 0,
+        now = 0;
+    //浏览器兼容      
+    if ((navigator.userAgent.toLowerCase().indexOf("firefox") != -1)) {
+        document.addEventListener("DOMMouseScroll", scrollFun, false);
+    } else if (document.addEventListener) {
+        document.addEventListener("mousewheel", scrollFun, false);
+    } else if (document.attachEvent) {
+        document.attachEvent("onmousewheel", scrollFun);
+    } else {
+        document.onmousewheel = scrollFun;
+    }
+
+    //滚动事件处理函数
+    function scrollFun(event) {
+        startTime = new Date().getTime();
+        var delta = event.detail || (-event.wheelDelta);
+        //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+        //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+        if ((endTime - startTime) < -1000) {
+            if (delta > 0 && parseInt(main.offsetTop) > -(hei * (pageNum - 1))) {
+                //向下滚动
+                index++;
+                toPage(index);
+            }
+            if (delta < 0 && parseInt(main.offsetTop) < 0) {
+                //向上滚动
+                index--;
+                toPage(index);
+            }
+            endTime = new Date().getTime();
+        } else {
+            event.preventDefault();
+        }
+    }
+
+
+    function toPage(idx) {
+        if (idx != 2) {
+            document.getElementById("explorer").style.animation = "explorer-end .5s ease";
+            setTimeout(function () { document.getElementById("explorer").style.display = "none"; }, 444);
+
+
+        } else {
+            document.getElementById("explorer").style.display = "";
+            document.getElementById("explorer").style.animation = "explorer-start 1s";
+        }
+        //jquery实现动画效果
+        if (idx != curIndex) {
+            index = idx
+            var delta = idx - curIndex;
+            now = now - delta * hei;
+            $("#main").animate({
+                top: (now + 'px')
+            }, 500);
+            curIndex = idx;
+            //更改列表的选中项
+            $(".pageUlLi").css("color", "black");
+            $("#pageUlLi" + idx).css("color", "red");
+
+        }
+    }
+    //鼠标点击翻页
+    document.getElementById("pageUlLi1").onclick = function () {
+        toPage(1);
+    }
+    document.getElementById("pageUlLi2").onclick = function () {
+        toPage(2);
+    }
+    document.getElementById("pageUlLi3").onclick = function () {
+        toPage(3);
+    }
+    document.getElementById("pageUlLi4").onclick = function () {
+        toPage(4);
+    }
+    document.getElementById("pageUlLi5").onclick = function () {
+        toPage(5);
+    }
+</script>
+
+</html>
