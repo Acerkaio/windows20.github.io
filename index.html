@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 20</title>
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/loading-ball.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="start-windows">
+            <div style="margin: auto;">
+                <div id="start-main">
+                    <img src="img/icon.png" alt="Net Work Error" class="start-windows-img">
+                </div>
+                <!-- 来自tjy -->
+                <br><br><br><br><br><br><br><br><br><br>
+                <loading id="loadbackloading" style="transition: all 1s ease 0s; opacity: 1;">
+                    <svg style="position: absolute;left: calc(50% - 25px);top:72%;" width="50px" height="50px"
+                        viewBox="0 0 16 16">
+                        <circle cx="8px" cy="8px" r="7px"></circle>
+                        <circle cx="8px" cy="8px" r="6px"></circle>
+                    </svg>
+                </loading>
+                <!-- <div class="loading" id="loading">
+                    <i>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </i>
+                </div> -->
+            </div>
+        </div>
+        <div id="lock">
+            <div style="margin: auto;">
+                <div class="avatar">
+
+                </div>
+                <!-- <div class="user-name"></div> -->
+                <div class="lock-main">
+                    <div id="user-name">Acerkaio</div>
+                    <div class="lock-line" id="lock-line"></div>
+                    <br>
+                    <input type="password" value="" id="input-password" onkeypress="enter()">
+                </div>
+            </div>
+        </div>
+        <div id="windos-main" onclick="FocusClick(1)">
+            <div id="root">
+                <div id="choice">
+
+                </div>
+                <div id="rg-menu" onclick="FocusClick(3)">
+                    <ul id="menu-main">
+                        <li id="rg-view">
+                            <div class="li-main">
+                                <div style="display: inline-flex; align-items: center; height: 100%;">
+                                    <img src="img/ico/icon-of-windows (6).png" alt="Error" class="lf-li">
+                                    <span class="lf-li" style="margin-left: 6px;">查看</span>
+                                </div>
+                                <span class="rg-li" style="display: inline-flex; align-items: center; height: 100%;"> <i
+                                        class=" fa fa-angle-right"></i></span>
+                            </div>
+                            <div class="rg-menu-more" id="rg-view-more">
+                                <ul class="menu-more-li">
+                                    <li>
+                                        <div class="more-li-main">
+                                            <div style="display: inline-flex; align-items: center; height: 100%;">
+                                                <img src="img/ico/icon-of-windows (7).png" alt="Error" class="lf-li">
+                                                <span class="lf-li" style="margin-left: 6px;">大图标</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="li-main">
+                                <div style="display: inline-flex; align-items: center; height: 100%;">
+                                    <img src="img/ico/icon-of-windows (1).png" alt="Error" class="lf-li">
+                                    <span class="lf-li" style="margin-left: 6px;">排序方式</span>
+                                </div>
+                                <span class="rg-li" style="display: inline-flex; align-items: center; height: 100%;"> <i
+                                        class=" fa fa-angle-right"></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="li-main">
+                                <div style="display: inline-flex; align-items: center; height: 100%;">
+                                    <img src="img/ico/icon-of-windows (2).png" alt="Error" class="lf-li">
+                                    <span class="lf-li" style="margin-left: 6px;">刷新</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="dock-start" onclick="FocusClick(4)">
+                <div class="start-lf">
+                    <img src="img/avatar.png" alt="Net work Error" id="start-av">
+                    <br>
+                    <span class="start-user-name">Acer Kaio</span>
+                    <br>
+                    <div class="start-input">
+                        <input type="text" placeholder="在此键入以搜索" id="start-input-inner">
+                        <span class="start-input-preffix">
+                            <i class="start-input-preffix-icon"></i>
+                        </span>
+                    </div>
+                    <span class="start-tit title sm">最近</span>
+                    <br>
+                    <div class="start-row">
+                        <div class="start-row-line">
+                            <img src="img/app-ico/systemsettings.png" alt="Error" class="start-row-img">
+                            <span class="start-row-dis">设置</span>
+                        </div>
+                        <div class="start-row-line">
+                            <img src="img/app-ico/photoshop.png" alt="Error" class="start-row-img">
+                            <span class="start-row-dis">Adobe Photoshop 2022</span>
+                        </div>
+                    </div>
+                    <button class="shutdown-button" onclick="shutdown()"><i class="fa fa-power-off"></i></button>
+                    <div class="shutdowns">
+                        <div>
+                            <i class="fa fa-undo"></i>
+                            <span>重启</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-power-off"></i>
+                            <span>关机</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="start-rg">
+                    <div class="start-rg-row">
+                        <div class="start-rg-row-main">
+                            <span class="title sm start-rg-tit">已固定</span>
+                            <button class="more-button">所有应用 <i class=" fa fa-angle-right"></i></button>
+
+                        </div>
+                    </div>
+                    <div class="start-rg-row">
+                        <div class="start-rg-row-main">
+                            <span class="title sm start-rg-tit">推荐的项目</span>
+                            <button class="more-button">更多 <i class=" fa fa-angle-right"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dock">
+                <div class="dock-icon" onclick="StartWindows()">
+                    <div class="icon-main" id="icon-windows">
+
+                    </div>
+                </div>
+            </div>
+            <!-- APP -->
+            <div class="WindowApp Ultron">
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jq.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ri-click.js"></script>
+</body>
+
+</html>

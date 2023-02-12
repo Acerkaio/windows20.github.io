@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        @keyframes spin-infinite {
+            0% {
+                stroke-dasharray: .01px, 43.97px;
+                tansform: rotate(0deg);
+            }
+
+            50% {
+                stroke-dasharray: 21.99px, 21.99px;
+                transform: rotate(450deg);
+            }
+
+            100% {
+                stroke-dasharray: .01px, 43.97px;
+                transform: rotate(3turn);
+            }
+        }
+
+        loading>svg>circle:last-child {
+            fill: #00000000;
+        }
+
+        loading>svg>circle:first-child {
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            animation: spin-infinite 1.8s linear 0s infinite normal none running;
+            transform-origin: 50% 50%;
+            transition: all .2s ease-in-out 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <loading id="loadbackloading" style="transition: all 1s ease 0s; opacity: 1;">
+        <svg style="position: absolute;left: calc(50% - 25px);top:72%;" width="50px" height="50px" viewBox="0 0 16 16">
+            <circle cx="8px" cy="8px" r="7px"></circle>
+            <circle cx="8px" cy="8px" r="6px"></circle>
+        </svg>
+    </loading>
+</body>
+
+</html>

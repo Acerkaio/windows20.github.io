@@ -1,0 +1,53 @@
+@media screen and (max-width: 768px) {
+    *{
+        -webkit-overflow-scrolling: touch;
+    }
+    #box {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow: hidden;
+    }
+    #top {
+        display: none;
+    }
+    body, html {
+        overflow: hidden;
+        background-position: center;
+    }
+    .b-footer {
+        width: 100%;
+        margin: 0;
+        height: 45px;
+        position: absolute;
+        bottom: 10px;
+    }
+    .b-footer #f-left {
+        width: calc(100% - 110px);
+        padding-left: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 45px;
+    }
+    #btn {
+        width: 80px;
+        height: 45px;
+        line-height: 45px;
+        margin-right: 10px;
+    }
+    .b-body {
+        margin: 0;
+        position: absolute;
+        top:60px;
+        left: 0px;
+        right: 0px;
+        bottom: 65px;
+        height: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
