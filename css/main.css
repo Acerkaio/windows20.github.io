@@ -23,6 +23,12 @@
     --start-av-width: 152px;
     --start-av-top: -80px;
     --shadow-color: #99a4ab;
+
+    /* Windows app */
+    --Ultron-height: 600px;
+    --Ultron-width: 400px;
+    --Ultron-top: 20px;
+    --Ultron-left: 40px;
 }
 
 @font-face {
@@ -700,4 +706,47 @@ ul>li {
 
 .more-button:active {
     box-shadow: 0px 0px .5px #00000028;
+}
+
+/* widows app */
+
+.WindowApp {
+    overflow: hidden;
+    min-height: 30px;
+    position: fixed;
+    background-color: var(--opa-white);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+}
+.Ultron {
+    border-radius: 5px;
+    height: var(--Ultron-height);
+    width: var(--Ultron-width);
+    top: var(--Ultron-top);
+    left: var(--Ultron-left);
+}
+.WindowAppHeader {
+    transition: all .15s ease;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.WindowAppHeader:hover {
+    background-color: rgba(255, 255, 255, 0.247);
+}
+.Windos-Icon {
+    height: 25px;
+    width: 25px;
+    margin-left: 2px;
+}
+.UltronIcon {
+    background: url(../img/app-ico/ac.png);
+    background-position: center;
+    background-size: cover;
+}
+.Windos-title {
+    font-size: 14px;
 }
