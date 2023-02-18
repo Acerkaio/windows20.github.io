@@ -4,3 +4,6 @@ This project aims to implement and enhance the desktop proposal of Windows 11 ba
 At present, the development progress is only about 10%, and the code has not been sorted out.
 
 Some functions are commented.
+
+
+开发阶段，你看到什么都是正常的！
